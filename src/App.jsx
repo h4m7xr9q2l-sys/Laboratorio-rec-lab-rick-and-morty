@@ -56,7 +56,7 @@ export function App() {
                 <p style={{ fontSize: '11px', color: '#7f8c8d', margin: '0 0 10px 0' }}>{char.species} - {char.status}</p>
                 <button 
                   onClick={() => toggleFavorite(char)} 
-                  style={{ backgroundColor: isFav ? '#e74c3c' : '#3498db', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', width: '100%', transition: 'background 0.2s' }}
+                  style={{ backgroundColor: isFav ? '#e74c3c' : '#e67e22', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', width: '100%', transition: 'background 0.2s' }}
                 >
                   {isFav ? 'Quitar de Favoritos' : '⭐ Agregar'}
                 </button>
