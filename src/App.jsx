@@ -32,10 +32,10 @@ export function App() {
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           {favorites.length === 0 && <p style={{ color: '#7f8c8d', fontStyle: 'italic' }}>Aún no hay personajes en favoritos. ¡Agrega algunos de la lista de abajo!</p>}
           {favorites.map((char) => (
-            <div key={char.id} style={{ border: '2px solid #2ecc71', padding: '10px', borderRadius: '8px', width: '140px', backgroundColor: '#e8f8f5', textAlign: 'center' }}>
+            <div key={char.id} style={{ border: '2px solid #1d7d45', padding: '10px', borderRadius: '8px', width: '140px', backgroundColor: '#e8f8f5', textAlign: 'center' }}>
               <img src={char.image} alt={char.name} style={{ width: '100%', borderRadius: '6px' }} />
               <p style={{ fontWeight: 'bold', fontSize: '13px', margin: '8px 0 4px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{char.name}</p>
-              <button onClick={() => toggleFavorite(char)} style={{ backgroundColor: '#e74c3c', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', width: '100%' }}>
+              <button onClick={() => toggleFavorite(char)} style={{ backgroundColor: '#27ae60', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', width: '100%' }}>
                 Quitar ❌
               </button>
             </div>
@@ -45,7 +45,7 @@ export function App() {
 
       {/* Lista General de Personajes */}
       <section>
-        <h2 style={{ color: '#2980b9', fontSize: '20px' }}>📋 Lista de Personajes</h2>
+        <h2 style={{ color: '#b99f29', fontSize: '20px' }}>📋 Lista de Personajes</h2>
         <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
           {characters.map((char) => {
             const isFav = favorites.some((fav) => fav.id === char.id);
@@ -56,7 +56,7 @@ export function App() {
                 <p style={{ fontSize: '11px', color: '#7f8c8d', margin: '0 0 10px 0' }}>{char.species} - {char.status}</p>
                 <button 
                   onClick={() => toggleFavorite(char)} 
-                  style={{ backgroundColor: '#e67e22', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', width: '100%' }}
+                  style={{ backgroundColor: isFav ? '#27ae60' : '#e67e22', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', width: '100%', transition: 'background 0.2s' }}
                 >
                   {isFav ? 'Quitar de Favoritos' : '⭐ Agregar'}
                 </button>
